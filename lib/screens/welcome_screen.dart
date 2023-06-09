@@ -4,6 +4,8 @@ import 'package:flashchat/screens/registration_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 
+import 'chat_screen.dart';
+
 const colorizeColors = [
   Colors.purple,
   Colors.blue,
@@ -15,6 +17,8 @@ const colorizeTextStyle = TextStyle(
   fontSize: 50.0,
   fontFamily: 'Horizon',
 );
+
+//
 
 class WelcomeScreen extends StatefulWidget {
   static const String id = 'welcome_screen';
@@ -98,7 +102,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                 text: 'Register',
                 onTap: () {
                   Navigator.pushNamed(context, RegistrationScreen.id);
-                })
+                }),
           ],
         ),
       ),
