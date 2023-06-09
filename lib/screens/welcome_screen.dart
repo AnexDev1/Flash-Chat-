@@ -4,8 +4,6 @@ import 'package:flashchat/screens/registration_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 
-import 'chat_screen.dart';
-
 const colorizeColors = [
   Colors.purple,
   Colors.blue,
