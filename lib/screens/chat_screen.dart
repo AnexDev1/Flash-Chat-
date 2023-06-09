@@ -41,6 +41,7 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black54,
       appBar: AppBar(
         leading: null,
         actions: <Widget>[
@@ -52,7 +53,7 @@ class _ChatScreenState extends State<ChatScreen> {
               }),
         ],
         title: const Text('⚡️Chat'),
-        backgroundColor: Colors.lightBlueAccent,
+        backgroundColor: Colors.deepPurple,
       ),
       body: SafeArea(
         child: Column(

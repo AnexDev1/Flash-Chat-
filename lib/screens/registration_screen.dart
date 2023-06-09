@@ -22,7 +22,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey[800],
       body: ModalProgressHUD(
         inAsyncCall: showSpinner,
         child: Padding(
@@ -68,7 +68,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 height: 24.0,
               ),
               RoundedButton(
-                color: Colors.blueAccent,
+                color: Colors.teal,
                 text: 'Register',
                 onTap: () async {
                   setState(
