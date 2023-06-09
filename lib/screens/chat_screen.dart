@@ -23,7 +23,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   Future<void> getCurrentUser() async {
     try {
-      final user = await _auth.currentUser;
+      final user = _auth.currentUser;
       if (user != null) {
         loggedInUser = user;
       }
@@ -77,11 +77,13 @@ class _ChatScreenState extends State<ChatScreen> {
                   MaterialButton(
                     onPressed: () {
                       messageTextController.clear();
-                      _firestore.collection('messages').add({
-                        'text': messageText,
-                        'sender': loggedInUser.email,
-                        'timestamp': FieldValue.serverTimestamp(),
-                      });
+                      _firestore.collection('messages').add(
+                        {
+                          'text': messageText,
+                          'sender': loggedInUser.email,
+                          'timestamp': FieldValue.serverTimestamp(),
+                        },
+                      );
                     },
                     child: const Text(
                       'Send',

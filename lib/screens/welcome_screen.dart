@@ -4,6 +4,18 @@ import 'package:flashchat/screens/registration_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 
+const colorizeColors = [
+  Colors.purple,
+  Colors.blue,
+  Colors.yellow,
+  Colors.red,
+];
+
+const colorizeTextStyle = TextStyle(
+  fontSize: 50.0,
+  fontFamily: 'Horizon',
+);
+
 class WelcomeScreen extends StatefulWidget {
   static const String id = 'welcome_screen';
   const WelcomeScreen({super.key});
@@ -56,16 +68,18 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                     child: Image.asset('images/logo.png'),
                   ),
                 ),
-                TextLiquidFill(
-                  text: 'Flash Chat',
-                  waveColor: Colors.black,
-                  boxBackgroundColor: animation.value,
-                  textStyle: const TextStyle(
-                    fontSize: 45.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  boxWidth: 220.0,
-                  boxHeight: 70.0,
+                AnimatedTextKit(
+                  animatedTexts: [
+                    ColorizeAnimatedText(
+                      'Flash Chat',
+                      textStyle: colorizeTextStyle,
+                      colors: colorizeColors,
+                    ),
+                  ],
+                  isRepeatingAnimation: true,
+                  onTap: () {
+                    print("Tap Event");
+                  },
                 ),
               ],
             ),
