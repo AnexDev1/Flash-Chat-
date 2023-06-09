@@ -5,7 +5,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 final _firestore = FirebaseFirestore.instance;
 late User loggedInUser;
-// bool isMe = false;
 
 class ChatScreen extends StatefulWidget {
   static const String id = 'chat_screen';
