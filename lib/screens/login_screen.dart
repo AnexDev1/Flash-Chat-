@@ -1,7 +1,6 @@
 import 'package:flashchat/components/rounded_button.dart';
 import 'package:flashchat/constants.dart';
 import 'package:flashchat/screens/chat_screen.dart';
-import 'package:flashchat/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
@@ -75,14 +74,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     showSpinner = true;
                   });
                   try {
-                    final logUser = await _auth.signInWithEmailAndPassword(
+                    await _auth.signInWithEmailAndPassword(
                         email: email, password: password);
-                    if (logUser != null) {
-                      Navigator.pushNamed(context, ChatScreen.id);
-                      setState(() {
-                        showSpinner = false;
-                      });
-                    }
+                    // ignore: use_build_context_synchronously
+                    Navigator.pushNamed(context, ChatScreen.id);
+                    setState(() {
+                      showSpinner = false;
+                    });
                   } catch (e) {
                     print(e);
                   }
