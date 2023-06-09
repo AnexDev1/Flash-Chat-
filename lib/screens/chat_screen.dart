@@ -125,8 +125,7 @@ class MessageStreams extends StatelessWidget {
             sender: messageSender,
             isMe: currentUser == messageSender,
           );
-          messageBubbles
-              .add(messageBubble); // Insert at the beginning of the list
+          messageBubbles.add(messageBubble);
         }
         return Expanded(
           child: ListView(
